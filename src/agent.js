@@ -52,9 +52,7 @@ const requests = {
 };
 
 const Banner = {
-    getBanner: () => {
-        requests.get('')
-    }
+    getBanner: () => requests.get('')
 };
 
 const Auth = {

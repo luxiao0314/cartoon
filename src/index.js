@@ -1,12 +1,10 @@
 import ReactDOM from 'react-dom';
 import promiseFinally from 'promise.prototype.finally';
 import React from 'react';
-import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import {Router,hashHistory} from 'react-router';
 import {useStrict} from 'mobx';
 import {Provider} from 'mobx-react';
 
-import App from './App';
-import Home from "./pages/Home";
 import headerStore from "./stores/headerStore";
 import routes from "./routes";
 import homeStore from "./stores/homeStore";
