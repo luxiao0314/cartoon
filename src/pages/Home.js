@@ -6,11 +6,10 @@
  * @Version
  */
 import React, {Component} from 'react';
-import TabsExampleControlled from "../components/TabsExampleControlled";
 import Header from "../components/Header";
 import ListExampleSimple from "../components/ListExampleSimple";
-// import Banner from "../components/Banner";
 import {inject, observer} from 'mobx-react';
+import Banner from "../components/Banner";
 
 let tabs = ['新闻', '快讯'];
 
@@ -18,16 +17,15 @@ let tabs = ['新闻', '快讯'];
 @observer
 export default class Home extends Component {
 
-    componentWillUnmount() {
-        // this.props.homeStore.fetchData();
-        // this.props.authStore.reset();
+    componentWillMount() {
+        this.props.homeStore.fetchData();
     }
 
     render() {
-        const {dataArr} = this.props.homeStore;
+        const {homeStore} = this.props;
         return (
             <dev>
-                {/*<Banner bannerData={dataArr}/>*/}
+                <Banner bannerData={homeStore.dataArr}/>
                 <Header tabs={tabs}>
                     <ListExampleSimple/>
                 </Header>

@@ -1,7 +1,6 @@
 // Banner
 import React from 'react';
-import slideTouch from '../plugs/slideTouch.js'; // 拖动焦点图 slideTouch.js
-import ajaxRequest from '../plugs/ajaxRequest.js'; // ajax
+import slideTouch from '../components/slideTouch.js'; // 拖动焦点图 slideTouch.js
 
 var Banner = React.createClass({
 	componentDidUpdate: function(){
@@ -63,7 +62,7 @@ var Banner = React.createClass({
 										<img src={firstBannerImg} alt={firstBannerAlt} />
 									</a>
 								</li>
-							</ul>	
+							</ul>
 							<ul className="slide-active">
 								{
 									bannerData.map( (bannerValue, bannerKey) => {
