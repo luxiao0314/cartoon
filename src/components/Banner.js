@@ -2,6 +2,7 @@
 import React from 'react';
 import slideTouch from "./slideTouch";
 require('../css/main.css');
+require('../css/live.css');
 
 var Banner = React.createClass({
     componentDidUpdate: function(){

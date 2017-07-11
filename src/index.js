@@ -6,7 +6,7 @@ import {useStrict} from 'mobx';
 import {Provider} from 'mobx-react';
 
 import headerStore from "./stores/headerStore";
-import routes from "./routes";
+import routes from "./config/routes";
 import homeStore from "./stores/homeStore";
 import authStore from "./stores/authStore";
 import commonStore from "./stores/commonStore";

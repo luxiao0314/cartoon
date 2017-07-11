@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx';
-import agent from '../agent';
+import agent from '../config/agent';
 
 class UserStore {
 

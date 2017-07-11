@@ -6,14 +6,14 @@
  * @Version
  */
 import {observable, action, computed} from 'mobx';
-import agent from "../agent";
+import * as apiService from "../config/apiService";
 export class homeStore {
 
     @observable banner = [];
     @observable errorMsg = '';
 
     @action fetchData() {
-        return agent.Banner.data()
+        return apiService.Banner.data()
             .then(action(({data}) => {
                 data = JSON.parse(data);
                 this.banner = data.data.banner;

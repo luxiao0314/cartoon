@@ -1,5 +1,5 @@
 import {hashHistory} from 'react-router';
-import agent from '../agent';
+import agent from '../config/agent';
 import userStore from './userStore';
 import commonStore from './commonStore';
 import {action, observable} from "../../node_modules/mobx/lib/mobx";
