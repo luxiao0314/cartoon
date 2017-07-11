@@ -24,9 +24,9 @@ export default class Home extends Component {
 
     componentWillMount() {
         this.props.homeStore.fetchData();
+        this.props.contentStore.indexMost();
         this.props.contentStore.indexRecommend();
         this.props.contentStore.indexBangumi();
-        this.props.contentStore.indexMost();
     }
 
     render() {
