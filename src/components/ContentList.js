@@ -3,21 +3,23 @@
  */
 import React, {Component} from 'react'
 import RecommendVideoContainer from "./RecommendVideoContainer";
+import {inject, observer} from 'mobx-react';
 import BangumiVideoContainer from "./BangumiVideoContainer";
 import DefaultVideoContainer from "./DefaultVideoContainer";
-import {observer} from 'mobx-react';
 
-const ContentList = observer(props => {
-    return (
-        <div>
-            <RecommendVideoContainer recommendData={props.recommendData}/>
-            <BangumiVideoContainer bangumiData={props.bangumiData}/>{
-            props.mostData.map((mostDataItem, index) => {
-                return <DefaultVideoContainer mostDataItem={mostDataItem} key={index}/>
-            })
-        }
-        </div>
-    )
-});
-
-export default ContentList;
+@inject('contentStore')
+@observer
+export default class ContentList extends Component {
+    render() {
+        const {recommendData, bangumiData, mostData} = this.props.contentStore;
+        return (
+            <div>
+                <RecommendVideoContainer recommendData={recommendData}/>
+                <BangumiVideoContainer bangumiData={bangumiData}/>{
+                mostData.slice().map((mostDataItem, index) => {
+                    return <DefaultVideoContainer mostDataItem={mostDataItem} key={index}/>
+                })
+            }</div>
+        );
+    }
+}

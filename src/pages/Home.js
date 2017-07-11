@@ -44,7 +44,6 @@ export default class Home extends Component {
                                 </Tab>
                             )}
                         </Tabs>
-                        <ContentList loadingChange={false}/>
                     </dev>
                 </MuiThemeProvider>
             </dev>
@@ -53,7 +52,7 @@ export default class Home extends Component {
 
     childPage = (i) => {
         if (i === 0) {
-            return (<NewsList/>)
+            return (<ContentList loadingChange={true}/>)
         } else {
             return (<FlashList/>);
         }

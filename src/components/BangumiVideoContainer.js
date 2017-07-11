@@ -3,11 +3,6 @@ import React from 'react';
 import imgLazyLoad from "../config/imgLazyLoad";
 
 var BangumiVideoContainer = React.createClass({
-	componentDidUpdate: function(){
-		if(this.props.liveData !== null){
-			imgLazyLoad('.content-item div.video-cover');
-		}
-	},
 	render: function(){
 
 		var bangumiData = this.props.bangumiData;
