@@ -5,7 +5,7 @@ import React, {Component} from 'react'
 import {requests} from "./agent";
 
 export const Banner = {
-    data: () => requests.get('/livePageData')
+    data: () => requests.get('/indexBanner')
     // data: () => requests.get('/article/recommend/header.json')
 };
 

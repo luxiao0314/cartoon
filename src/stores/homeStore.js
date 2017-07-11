@@ -16,7 +16,7 @@ export class homeStore {
         return apiService.Banner.data()
             .then(action(({data}) => {
                 data = JSON.parse(data);
-                this.banner = data.data.banner;
+                this.banner = data.data;
                 this.errorMsg = '';
             }))
             .catch(action(error => {
