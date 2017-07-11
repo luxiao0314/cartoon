@@ -4,9 +4,16 @@
 import React, {Component} from 'react'
 import {requests} from "./agent";
 
-export const Banner = {
-    data: () => requests.get('/indexBanner')
+export const HomeService = {
+    //轮播图
+    indexBanner: () => requests.get('/indexBanner'),
     // data: () => requests.get('/article/recommend/header.json')
+    //推荐
+    indexRecommend: () => requests.get('/indexRecommend'),
+    //番剧
+    indexBangumi: () => requests.get('/indexBangumi'),
+    //其余全部视频数据获取
+    indexMost: () => requests.get('/indexMost'),
 };
 
 export const Auth = {

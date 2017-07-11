@@ -13,15 +13,20 @@ import FlashList from "../components/FlashList";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Banner from "../components/Banner";
+import ContentList from "../components/ContentList";
 
 let tabs = ['新闻', '快讯'];
 
 @inject('homeStore')
+@inject('contentStore')
 @observer
 export default class Home extends Component {
 
     componentWillMount() {
         this.props.homeStore.fetchData();
+        this.props.contentStore.indexRecommend();
+        this.props.contentStore.indexBangumi();
+        this.props.contentStore.indexMost();
     }
 
     render() {
@@ -39,6 +44,7 @@ export default class Home extends Component {
                                 </Tab>
                             )}
                         </Tabs>
+                        <ContentList loadingChange={false}/>
                     </dev>
                 </MuiThemeProvider>
             </dev>

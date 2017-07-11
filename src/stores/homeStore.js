@@ -13,7 +13,7 @@ export class homeStore {
     @observable errorMsg = '';
 
     @action fetchData() {
-        return apiService.Banner.data()
+        return apiService.HomeService.indexBanner()
             .then(action(({data}) => {
                 data = JSON.parse(data);
                 this.banner = data.data;
